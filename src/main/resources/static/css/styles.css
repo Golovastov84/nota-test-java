@@ -56,7 +56,7 @@ height: 500px;
     clear:left;
 }
 
-#registrationForm > input{
+#registrationForm > input, #choiceLoginForm > input{
     float:center;
     clear:both;
     margin: 10px;

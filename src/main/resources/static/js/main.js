@@ -3,9 +3,10 @@ $(function(){
 
     $('#enterId').click(function(){
                var incomingText = $('#choiceLogin form').serialize();
-               /* if(incomingText == ""){
+               var inText = document.getElementById('incomingTextId').value;
+               if(inText == ""){
                             alert("Введите текст");
-                        } else {*/
+                        } else {
                            $.ajax({
                                 method: "POST",
                                 url: '/inTexts/',
@@ -16,7 +17,7 @@ $(function(){
                                         $('#registrationWindow').css({display: 'flex'});
                                 }
                             });
-                       /*}*/
+                       }
 
                          /*$('#choiceLogin').css({display: 'none'});
                          $('#registrationWindow').css({display: 'flex'});*/
