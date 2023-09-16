@@ -1,14 +1,14 @@
 $(function(){
-
+//  var incomingText = "qwerty";
 
     $('#enterId').click(function(){
-                var incomingText = document.getElementById('incomingTextId').value;
+               var incomingText = $('#choiceLogin form').serialize();
                /* if(incomingText == ""){
                             alert("Введите текст");
                         } else {*/
-                           /* $.ajax({
+                           $.ajax({
                                 method: "POST",
-                                url: '/inTexts',
+                                url: '/inTexts/',
                                 data: incomingText,
                                 success: function(response){
                                     document.getElementById('calculationResultId').value = response;
@@ -16,10 +16,10 @@ $(function(){
                                         $('#registrationWindow').css({display: 'flex'});
                                 }
                             });
-                       }*/
+                       /*}*/
 
-                         $('#choiceLogin').css({display: 'none'});
-                         $('#registrationWindow').css({display: 'flex'});
+                         /*$('#choiceLogin').css({display: 'none'});
+                         $('#registrationWindow').css({display: 'flex'});*/
         return false;
     });
 
