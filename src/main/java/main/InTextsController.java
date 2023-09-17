@@ -1,13 +1,12 @@
 package main;
 
 
+import main.model.InResult;
 import main.model.InText;
+import org.springframework.http.HttpStatus;
 import org.springframework.ui.ConcurrentModel;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
@@ -17,12 +16,15 @@ import java.util.stream.Collectors;
 @RestController
 public class InTextsController {
 
+
     @RequestMapping(value = "/inTexts/", method = RequestMethod.POST)
-    public String addInText(InText inText) {
-        return getCollectionResult(creatingCollection(Storage.addInText(inText))).toString();
+//    @PostMapping
+//    @ResponseStatus(HttpStatus.CREATED)
+    public InResult addInText(InText inText) {
+        return getCollectionResult(creatingCollection(Storage.addInText(inText)));
     }
 
-    public StringBuilder getCollectionResult(String[] arrayOfText){
+    public InResult getCollectionResult(String[] arrayOfText){
         Map<String, Integer> characterCountingMap = new TreeMap<>();
         for (String inputString : arrayOfText){
             characterCountingMap.merge(inputString, 1, Integer::sum);
@@ -42,7 +44,9 @@ public class InTextsController {
         collectionResult.append(sortValueList.get(sortValueList.size() - 1).getKey());
         collectionResult.append("”: ");
         collectionResult.append(sortValueList.get(sortValueList.size() - 1).getValue());
-        return collectionResult;
+        InResult inResult = new InResult();
+        inResult.setSecondText(collectionResult.toString());
+        return inResult;
     }
 
     public String[] creatingCollection(String inText){

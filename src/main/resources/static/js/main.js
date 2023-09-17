@@ -13,11 +13,11 @@ $(function(){
                                 url: '/inTexts/',
                                 data: incomingText,
                                 success: function(response){
-                                    document.getElementById('calculationResultId').value = response;
+                                    document.getElementById('calculationResultId').value = response.secondText;
                                         $('#choiceLogin').css({display: 'none'});
                                         $('#registrationWindow').css({display: 'flex'});
     // автоматическое расширение блока input
-                                        var textLength = ((response.length + 1) * 8);
+                                        var textLength = ((response.secondText.length + 1) * 8);
                                         if(textLength < 1000){
                                         block.style.width = textLength + "px";
                                         } else{
