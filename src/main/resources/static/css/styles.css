@@ -40,8 +40,8 @@ height: 500px;
     justify-content: center;
     position: absolute;
     top:100px;
-    left:500px;
-    width: 300px;
+    left:50px;
+    width: 1130px;
 }
 
 #choiceLoginForm > button, #registrationForm > button{
@@ -60,7 +60,7 @@ height: 500px;
     float:center;
     clear:both;
     margin: 10px;
-    width: 220px;
+    width: 500px;
     height: 50px;
     font-size: 20px;
 }

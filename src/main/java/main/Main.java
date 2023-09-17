@@ -1,16 +1,21 @@
 package main;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
-//@SpringBootApplication
+@SpringBootApplication
 public class Main {
     public static void main(String[] args) {
 
-        //SpringApplication.run(Main.class, args);
-        Map<String, Integer> characterCountingMap = new TreeMap<>();
+        SpringApplication.run(Main.class, args);
+    }
+}
+    /* Map<String, Integer> characterCountingMap = new TreeMap<>();
         for (String inputString : creatingCollection("Спроектировать(продумать формат и ограничения входящих/исходящих параметров) и реализовать REST API, \n" +
                 "вычисляющее частоту встречи символов по заданной строке. \n" +
                 "Результат должен быть отсортирован по убыванию количества вхождений символа в заданную строку.\n")){
@@ -32,11 +37,9 @@ public class Main {
         collectionResult.append("”: ");
         collectionResult.append(sortValueList.get(sortValueList.size() - 1).getValue());
         System.out.println(collectionResult);
-    }
+    }*/
 
-    public static String[] creatingCollection(String inText){
-        // Теория TreeMap
-
+   /* public static String[] creatingCollection(String inText){
         return inText.split("");
-    }
-}
+    }*/
+

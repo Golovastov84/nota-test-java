@@ -1,5 +1,6 @@
 $(function(){
 //  var incomingText = "qwerty";
+    block = document.getElementById("calculationResultId");
 
     $('#enterId').click(function(){
                var incomingText = $('#choiceLogin form').serialize();
@@ -15,12 +16,16 @@ $(function(){
                                     document.getElementById('calculationResultId').value = response;
                                         $('#choiceLogin').css({display: 'none'});
                                         $('#registrationWindow').css({display: 'flex'});
+    // автоматическое расширение блока input
+                                        var textLength = ((response.length + 1) * 8);
+                                        if(textLength < 1000){
+                                        block.style.width = textLength + "px";
+                                        } else{
+                                        block.style.width = 1000 + "px";
+                                        }
                                 }
                             });
                        }
-
-                         /*$('#choiceLogin').css({display: 'none'});
-                         $('#registrationWindow').css({display: 'flex'});*/
         return false;
     });
 
