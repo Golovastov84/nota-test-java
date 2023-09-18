@@ -22,18 +22,18 @@ body{
 	float:left;
 	}
 
-#choiceLogin{
+#originalText{
     display: flex;
     height: 300px;
 }
 
-#registrationWindow{
+#calculationResult{
 display: none;
 height: 500px;
 }
 
 
-#choiceLogin, #registrationWindow{
+#originalText, #calculationResult{
     background-color: #B0E0E6;
     border-radius: 25px;
     align-items: center;
@@ -44,7 +44,7 @@ height: 500px;
     width: 1130px;
 }
 
-#choiceLoginForm > button, #registrationForm > button{
+#originalTextForm > button, #calculationResultForm > button{
     align-items: center;
     border-radius: 5px;
     font-size: 20px;
@@ -56,7 +56,7 @@ height: 500px;
     clear:left;
 }
 
-#registrationForm > input, #choiceLoginForm > input{
+#calculationResultForm > input, #originalTextForm > input{
     float:center;
     clear:both;
     margin: 10px;

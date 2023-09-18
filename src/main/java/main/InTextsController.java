@@ -1,13 +1,8 @@
 package main;
 
-
 import main.model.InResult;
 import main.model.InText;
-import org.springframework.http.HttpStatus;
-import org.springframework.ui.ConcurrentModel;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -16,12 +11,9 @@ import java.util.stream.Collectors;
 @RestController
 public class InTextsController {
 
-
     @RequestMapping(value = "/inTexts/", method = RequestMethod.POST)
-//    @PostMapping
-//    @ResponseStatus(HttpStatus.CREATED)
     public InResult addInText(InText inText) {
-        return getCollectionResult(creatingCollection(Storage.addInText(inText)));
+        return getCollectionResult(creatingCollection(inText.getPrimeText()));
     }
 
     public InResult getCollectionResult(String[] arrayOfText){
